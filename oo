@@ -1,0 +1,19 @@
+def sort_tuple_of_strings(input_tuple):
+    # Convert the tuple to a list so we can perform sorting operations
+    input_list = list(input_tuple)
+    
+    # Bubble sort algorithm to sort the list alphabetically
+    n = len(input_list)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if input_list[j] > input_list[j + 1]:
+                # Swap the elements if they are in the wrong order
+                input_list[j], input_list[j + 1] = input_list[j + 1], input_list[j]
+    
+    # Convert the list back to a tuple and return it
+    return tuple(input_list)
+
+# Example usage
+input_tuple = ("banana", "apple", "cherry", "date")
+sorted_tuple = sort_tuple_of_strings(input_tuple)
+print(sorted_tuple)
